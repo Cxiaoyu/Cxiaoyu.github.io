@@ -61,8 +61,11 @@ a {
 
 .nav ul li {
     float: left;
-    padding: 10px 70.7px;
+    width: 200px;
+    height: 50px;
     font-size: 24px;
+    text-align: center;
+    line-height: 50px;
     background-color: #e6606b;
     -webkit-transition: color, background-color 0.5s linear;
 }
@@ -74,7 +77,8 @@ a {
 .nav ul li:hover {
     background-color: rgba(236, 255, 46, 1);
 }
-.nav ul li:hover > a{
+
+.nav ul li:hover > a {
     color: #3656ff;
     font-weight: bold;
 }
@@ -115,7 +119,7 @@ a {
     line-height: 30px;
     background: rgba(0, 186, 230, 0.53);
     -webkit-transition: top 0.5s linear;
-    font-family: 幼圆;
+    /*font-family: 幼圆;*/
 }
 
 .pic_word p {
