@@ -74,6 +74,10 @@ a {
 .nav ul li:hover {
     background-color: rgba(236, 255, 46, 1);
 }
+.nav ul li:hover > a{
+    color: #3656ff;
+    font-weight: bold;
+}
 
 .content {
     width: 1000px;
