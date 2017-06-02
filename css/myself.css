@@ -1,6 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    font-family: "Calibri Light";
+}
+
+a {
+    text-decoration: none;
 }
 
 #body {
@@ -12,12 +18,11 @@
     height: 60px;
     background-color: rgb(0, 79, 230);
     border-radius: 15px 15px 0 0;
-    margin: 5px auto;
+    margin: 5px auto 0;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
     line-height: 60px;
-    font-family: "Calibri Light";
     color: #e6606b;
 }
 
@@ -25,16 +30,112 @@
     width: 50px;
     height: 50px;
     padding: 0 0 5px 0;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
-.line{
+.line_1 {
     width: 1000px;
-    height: 4px;
-    background-color: rgb(0, 79, 230);
+    height: 3px;
+    background-color: #e6606b;
     margin: 1px auto;
 }
 
-.content{
+.line_2 {
+    width: 1000px;
+    height: 5px;
+    background-color: rgb(0, 79, 230);
+    margin: 1px auto 3px;
+}
 
+.nav {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    background: #e6606b;
+}
+
+.nav ul {
+    margin: 0 auto;
+    display: block;
+}
+
+.nav ul li {
+    float: left;
+    padding: 10px 70.7px;
+    font-size: 24px;
+    background-color: #e6606b;
+    -webkit-transition: color, background-color 0.5s linear;
+}
+
+.nav ul li a {
+    color: #6cd1ff;
+}
+
+.nav ul li:hover {
+    background-color: rgba(236, 255, 46, 1);
+}
+
+.content {
+    width: 1000px;
+    height: 500px;
+    background: rgba(0, 79, 230, 0.48);
+    margin: 5px auto;
+}
+
+.small {
+    width: 240px;
+    height: 240px;
+    background: black;
+    float: left;
+    margin: 5px;
+    overflow: hidden;
+    color: white;
+    font-weight: 100;
+}
+
+.small img {
+    width: 240px;
+    height: 240px;
+    -webkit-transition: width, height 0.5s linear;
+}
+
+.word {
+    position: relative;
+}
+
+.pic_word {
+    position: absolute;
+    top: 245px;
+    width: 240px;
+    height: 250px;
+    line-height: 30px;
+    background: rgba(0, 186, 230, 0.53);
+    -webkit-transition: top 0.5s linear;
+    font-family: 幼圆;
+}
+
+.pic_word p {
+    margin: 5px 0 0 30px;
+}
+
+.pic_word p:nth-child(2), .pic_word p:nth-child(3), .pic_word p:nth-child(4) {
+    margin-left: 50px;
+}
+
+.word:hover > .pic_word {
+    top: 0;
+}
+
+.small img:hover {
+    -webkit-transform-origin: center center;
+    -webkit-animation: "big" 1s;
+}
+
+@-webkit-keyframes "big" {
+    0% {
+        -webkit-transform: scale(1)
+    }
+    100% {
+        -webkit-transform: scale(1.3)
+    }
 }
