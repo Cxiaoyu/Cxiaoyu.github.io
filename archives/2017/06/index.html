@@ -4,13 +4,12 @@
 </head>
 <body>
 <div class="cover">
-    <div>
-        <div class="ll"></div>
-        <div class="title"><img src="css/images/element.ico" alt="" id="title_img"> Lady Chen's Home Page</div>
-    </div>
+    <div class="ll"></div>
+    <div class="title"><img src="css/images/element.ico" alt="" id="title_img"> Lady Chen's Home Page</div>
 
     <div class="line_1"></div>
     <div class="line_2"></div>
+    <div class="line_3"></div>
 
     <nav class="nav">
         <ul>
@@ -59,28 +58,32 @@
         <div class="small"><img src="css/images/p4.jpg" alt=""></div>
     </div>
 
-
     <div class="content_2">
-        <div class="list">
-            
-            <div>
-    <span>2017-06-01</span>
-    <a href="/2017/06/01/test/">test</a>
-</div>
-            
-            <div>
-    <span>2017-06-01</span>
-    <a href="/2017/06/01/hello-world/">Hello World</a>
-</div>
-            
+        <div class="music">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=400
+                    src="//music.163.com/outchain/player?type=0&id=751866961&auto=1&height=430"></iframe>
+        </div>
+
+        <div class="work">
+            <div class="list_title">
+                随手记
+            </div>
+            <div class="list">
+                <ul>
+                    <%site.posts.sort("date", "desc").each(function (post) {%>
+                    <%-partial("_partial/post_entry", {post: post})%>
+                    <%})%>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <div class="line_3"></div>
     <div class="line_2"></div>
     <div class="line_1"></div>
 
     <footer>
-
+        <div></div>
     </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/myself.js"></script>
