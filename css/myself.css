@@ -175,3 +175,15 @@ a {
 {
     background-color: #e67286;
 }
+
+.list{
+    width: 400px;
+    height: 400px;
+    color: #004fe6;
+    font-size: 25px;
+    background: yellow;
+}
+
+.list a{
+    color: #004fe6;
+}
