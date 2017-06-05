@@ -2,23 +2,32 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-decoration: none;
     font-family: "Calibri Light";
 }
 
-a {
-    text-decoration: none;
-}
-
-#body {
+body {
     background: url("images/bg.jpg");
+    width: 100%;
+    height: 100%;
 }
 
+.cover {
+    background: rgba(0, 0, 0, 0.73);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+.ll{
+    width: 1000px;
+    height: 10px;
+}
 .title {
     width: 1000px;
     height: 60px;
     background-color: rgb(0, 79, 230);
     border-radius: 15px 15px 0 0;
-    margin: 5px auto 0;
+    margin: 0 auto;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -35,22 +44,24 @@ a {
 
 .line_1 {
     width: 1000px;
-    height: 3px;
+    height: 4px;
     background-color: #e6606b;
-    margin: 1px auto;
+    border-radius: 2px;
+    margin: 3px auto 0 ;
 }
 
 .line_2 {
     width: 1000px;
     height: 5px;
     background-color: rgb(0, 79, 230);
-    margin: 1px auto;
+    margin: 2px auto 0;
+    border-radius: 2px;
 }
 
 .nav {
     width: 1000px;
     height: 50px;
-    margin: 0 auto;
+    margin: 5px auto 0;
     background: #e6606b;
 }
 
@@ -64,21 +75,15 @@ a {
     width: 200px;
     height: 50px;
     font-size: 24px;
+    color: #6cd1ff;
     text-align: center;
     line-height: 50px;
     background-color: #e6606b;
     -webkit-transition: color, background-color 0.5s linear;
 }
 
-.nav ul li a {
-    color: #6cd1ff;
-}
-
 .nav ul li:hover {
     background-color: rgba(236, 255, 46, 1);
-}
-
-.nav ul li:hover > a {
     color: #3656ff;
     font-weight: bold;
 }
@@ -86,7 +91,7 @@ a {
 .content {
     width: 1000px;
     height: 500px;
-    background: rgba(0, 79, 230, 0.48);
+    background: rgb(0, 79, 230);
     margin: 5px auto;
 }
 
@@ -151,39 +156,37 @@ a {
     }
 }
 
-.content_2{
+.content_2 {
     width: 1000px;
     height: 400px;
     margin: 0 auto;
     background: #e6424a;
 }
 
-.footer{
+.footer {
     width: 1000px;
     height: 100px;
     background-color: rgb(0, 79, 230);
-    margin: 0 auto 5px;
+    margin: 3px auto 5px;
     border-radius: 0 0 15px 15px;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
     background-color: #004fe6;
 }
 
-::-webkit-scrollbar-thumb
-{
-    background-color: #e67286;
+::-webkit-scrollbar-thumb {
+    background-color: yellow;
 }
 
-.list{
+.list {
     width: 400px;
     height: 400px;
     color: #004fe6;
-    font-size: 25px;
+    font-size: 20px;
     background: yellow;
 }
 
-.list a{
+.list a {
     color: #004fe6;
 }

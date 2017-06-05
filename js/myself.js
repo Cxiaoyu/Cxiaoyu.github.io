@@ -1,0 +1,1 @@
+$(".cover").css("height",$(document).height());
