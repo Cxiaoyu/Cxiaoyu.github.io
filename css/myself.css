@@ -63,7 +63,7 @@ body {
 .line_3 {
     width: 985px;
     height: 4px;
-    background-color: #00f0ff;
+    background-color: yellow;
     border-radius: 2px;
     margin: 3px auto 0;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .nav ul li:hover {
-    background-color: rgba(236, 255, 46, 1);
+    background-color: yellow;
     color: rgb(0, 79, 230);
     font-weight: bold;
 }
@@ -188,15 +188,15 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #00ff1a;
+    background-color: yellow;
 }
 
 .list {
     width: 400px;
     height: 380px;
-    color: rgb(0, 79, 230);
+    color: #6cd1ff;
     font-size: 20px;
-    background: yellow;
+    background: #e6606b;
     overflow: auto;
     text-align: center;
     float: left;
@@ -205,12 +205,12 @@ footer {
 }
 
 .list a {
-    color: rgb(0, 79, 230);
+    color: #6cd1ff;
     font-weight: bold;
 }
 
 .list_title {
-    color: rgb(0, 79, 230);
+    color: #6cd1ff;
     width: 400px;
     height: 30px;
     text-align: center;
@@ -231,7 +231,12 @@ footer {
     float: left;
     width: 250px;
     height: 380px;
-    background: #e6606b;
     margin: 10px 0 0 10px;
     border-radius: 15px 0 15px;
+    overflow: hidden;
 }
+
+.pic img{
+    width: 250px;
+    /*height: 380px;*/
+ }
