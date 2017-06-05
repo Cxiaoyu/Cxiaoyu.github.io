@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url("images/bg.jpg");
+    background: url("http://or2fnb3it.bkt.clouddn.com/bg.jpg");
     width: 100%;
     height: 100%;
 }
@@ -18,10 +18,12 @@ body {
     height: 100%;
     z-index: -10;
 }
-.ll{
+
+.ll {
     width: 1000px;
     height: 10px;
 }
+
 .title {
     width: 1000px;
     height: 60px;
@@ -47,7 +49,7 @@ body {
     height: 4px;
     background-color: #e6606b;
     border-radius: 2px;
-    margin: 3px auto 0 ;
+    margin: 3px auto 0;
 }
 
 .line_2 {
@@ -58,12 +60,12 @@ body {
     border-radius: 2px;
 }
 
-.line_3{
+.line_3 {
     width: 985px;
     height: 4px;
     background-color: #00f0ff;
     border-radius: 2px;
-    margin: 3px auto 0 ;
+    margin: 3px auto 0;
 }
 
 .nav {
@@ -94,7 +96,7 @@ body {
 
 .nav ul li:hover {
     background-color: rgba(236, 255, 46, 1);
-    color: #3656ff;
+    color: rgb(0, 79, 230);
     font-weight: bold;
 }
 
@@ -182,7 +184,7 @@ footer {
 }
 
 ::-webkit-scrollbar {
-    background-color: #004fe6;
+    background-color: rgb(0, 79, 230);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -192,39 +194,44 @@ footer {
 .list {
     width: 400px;
     height: 380px;
-    color: #004fe6;
+    color: rgb(0, 79, 230);
     font-size: 20px;
     background: yellow;
     overflow: auto;
     text-align: center;
     float: left;
     margin: 10px 0 0 0;
+    border-radius: 15px 0 15px;
 }
 
 .list a {
-    color: #004fe6;
+    color: rgb(0, 79, 230);
     font-weight: bold;
 }
 
-.list_title{
-    color: #6cd1ff;
+.list_title {
+    color: rgb(0, 79, 230);
     width: 400px;
     height: 30px;
     text-align: center;
     line-height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
 }
+
 .list ul li {
     margin-top: 10px;
 }
 
-.music{
+.music {
     float: left;
 }
 
-.pic{
+.pic {
     float: left;
     width: 250px;
     height: 380px;
-    background:#e6606b;
+    background: #e6606b;
     margin: 10px 0 0 10px;
+    border-radius: 15px 0 15px;
 }
