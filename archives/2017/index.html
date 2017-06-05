@@ -64,17 +64,27 @@
                     src="//music.163.com/outchain/player?type=0&id=751866961&auto=1&height=430"></iframe>
         </div>
 
-        <div class="work">
+        <div class="list">
             <div class="list_title">
                 随手记
             </div>
-            <div class="list">
-                <ul>
-                    <%site.posts.sort("date", "desc").each(function (post) {%>
-                    <%-partial("_partial/post_entry", {post: post})%>
-                    <%})%>
-                </ul>
-            </div>
+            <ul>
+                
+                <li>
+    <span>2017-06-01</span>
+    <a href="/2017/06/01/test/">test</a>
+</li>
+                
+                <li>
+    <span>2017-06-01</span>
+    <a href="/2017/06/01/hello-world/">Hello World</a>
+</li>
+                
+            </ul>
+        </div>
+
+        <div class="pic">
+
         </div>
     </div>
 
