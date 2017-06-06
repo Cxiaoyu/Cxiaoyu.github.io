@@ -1,4 +1,5 @@
 <head>
+    <meta charset="UTF-8">
     <title>Cxiaoyu</title>
     <link rel="stylesheet" href="css/myself.css">
 </head>
@@ -13,11 +14,10 @@
 
     <nav class="nav">
         <ul>
-            <li><a href='#'>Home</a></li>
+            <li class="flag"><a href=''>Home</a></li>
             <li><a href='work'>Work</a></li>
-            <li><a href='game'>Game</a></li>
             <li><a href='enjoy'>Enjoy</a></li>
-            <li><a href='contact'>Contact</a></li>
+            <li><a href='contact'>About</a></li>
         </ul>
     </nav>
 
@@ -40,7 +40,7 @@
             <div class="pic_word user_info">
                 <p>array(</p>
                 <p>"name" : "\u9648\u6653\u79b9",</p>
-                <p>"sex" : 0,</p>
+                <p>"born" : 1993-05,</p>
                 <p>"career" : "programmer",</p>
                 <p>"like" : "Reading novels,Play computer game,Climbing"</p>
                 <p>)</p>
@@ -48,31 +48,36 @@
         </div>
         <div class="small word">
             <img src="http://or2fnb3it.bkt.clouddn.com/p8.jpg" alt="">
-            <div class="pic_word"></div>
+            <div class="pic_word">
+                <p>$time = date("Y-m-d",time());</p>
+                <p>$time_array = explode('-', $time);</p>
+                <p>$born_array = explode('-', $born);</p>
+                <p>if (count($time_array) === 2 || count($born_array) === 2) {</p>
+                <p>$year = $time_array[0] - $born_array[0];</p>
+            </div>
         </div>
         <div class="small"><img src="http://or2fnb3it.bkt.clouddn.com/p3.jpg" alt=""></div>
         <div class="small word">
             <img src="http://or2fnb3it.bkt.clouddn.com/p5.jpg" alt="">
-            <div class="pic_word"></div>
+            <div class="pic_word">
+                <p>if ($time_array[1] > $born_array[1]) {</p>
+                <p>echo $year;</p>
+                <p>}</p>
+                <p>echo $year - 1;</p>
+                <p>}</p>
+                <p>echo false;</p>
+            </div>
         </div>
         <div class="small"><img src="http://or2fnb3it.bkt.clouddn.com/p4.jpg" alt=""></div>
     </div>
-
+    <div class="line_3"></div>
     <div class="content_2">
-        <div class="music">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=400
-                    src="//music.163.com/outchain/player?type=0&id=751866961&auto=1&height=430"></iframe>
-        </div>
-
         <div class="list">
-            <div class="list_title">
-                随手记
-            </div>
             <ul>
                 
                 <li>
-    <span>2017-06-01</span>
-    <a href="/2017/06/01/test/">test</a>
+    <span>2017-06-06</span>
+    <a href="/2017/06/06/redis备忘/">redis备忘</a>
 </li>
                 
                 <li>
@@ -82,21 +87,23 @@
                 
             </ul>
         </div>
+        <div class="music">
+            <iframe frameborder="no" marginwidth="0" marginheight="0" width=330 height=400
+                    src="//music.163.com/outchain/player?type=0&id=751866961&auto=1&height=430"></iframe>
+        </div>
 
         <div class="pic">
-            <img src="css/images/jinkesi.jpg" alt="">
+            <img src="http://or2fnb3it.bkt.clouddn.com/game.jpg" alt="">
         </div>
     </div>
 
-
-    <div class="line_3"></div>
     <div class="line_2"></div>
+    <div class="line_3"></div>
     <div class="line_1"></div>
 
     <footer>
-        <div>
-            email:657466063@qq.com    新浪微博:勇敢无敌Dangerous
-        </div>
+        <p>Don't be too quick to judge</p>
+        <p>email:657466063@qq.com ; weibo:<span>勇敢无敌</span>Dangerous</p>
     </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/myself.js"></script>

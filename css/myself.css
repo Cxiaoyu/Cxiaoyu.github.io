@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    list-style: none;
     text-decoration: none;
     font-family: "Calibri Light";
 }
@@ -80,11 +79,12 @@ body {
 .nav ul {
     margin: 0 auto;
     display: block;
+    list-style: none;
 }
 
 .nav ul li {
     float: left;
-    width: 200px;
+    width: 250px;
     height: 50px;
     font-size: 24px;
     color: #6cd1ff;
@@ -207,13 +207,12 @@ footer {
     overflow: auto;
     text-align: center;
     float: left;
-    margin: 10px 0 0 0;
-    border-radius: 15px 0 15px;
+    margin: 10px 0 0 10px;
+    border-radius: 0 0 0 10px;
 }
 
 .list a {
     color: #6cd1ff;
-    font-weight: bold;
 }
 
 .list_title {
@@ -223,11 +222,21 @@ footer {
     text-align: center;
     line-height: 30px;
     margin-top: 10px;
-    font-weight: bold;
 }
 
 .list ul li {
-    margin-top: 10px;
+    padding: 10px;
+    list-style: none;
+    -webkit-transition: color, background-color 0.5s linear;
+}
+
+.list ul li:hover {
+    background: yellow;
+    color: rgb(0, 79, 230);
+}
+
+.list ul li:hover > a {
+    color: rgb(0, 79, 230);
 }
 
 .music {
@@ -238,11 +247,103 @@ footer {
     float: left;
     width: 250px;
     height: 380px;
-    margin: 10px 0 0 10px;
-    border-radius: 15px 0 15px;
+    margin: 10px 0 0 0;
     overflow: hidden;
+    background: yellow;
+    border-radius: 0 0 10px 0;
 }
 
 .pic img {
     width: 250px;
+}
+
+footer p {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+}
+
+footer p span {
+    font-family: 幼圆;
+}
+
+.page_border {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.page_title {
+    color: yellow;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+}
+
+.page_content {
+    width: 900px;
+    height: auto;
+    line-height: 40px;
+    color: white;
+    margin: 0 auto;
+    list-style-position: inside;
+}
+
+.nav ul .flag {
+    background: yellow;
+}
+
+.nav ul .flag a {
+    color: rgb(0, 79, 230);
+    font-weight: bold;
+}
+
+.contact{
+    width: 1000px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 3px auto 0;
+}
+
+.introduce{
+    color: white;
+    font-size: 15px;
+    line-height: 30px;
+    width: 260px;
+    height: 320px;
+    background: #009cd4;
+    float: left;
+    padding: 20px;
+    text-align: center;
+}
+
+.h1,.h2,.h3,.h4{
+    height: 320px;
+    float: left;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    padding: 20px;
+    line-height: 30px;
+}
+
+.h1{
+    width: 80px;
+    background: #72dcec;
+}
+
+.h2{
+    width: 150px;
+    background: #54c2ca;
+}
+
+.h3{
+    width: 160px;
+    background: #005b76;
+}
+.h4{
+    width: 150px;
+    background: #00264a;
 }
