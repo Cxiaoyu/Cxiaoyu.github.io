@@ -94,8 +94,15 @@ body {
     -webkit-transition: color, background-color 0.5s linear;
 }
 
+.nav ul li a {
+    color: #6cd1ff;
+}
+
 .nav ul li:hover {
     background-color: yellow;
+}
+
+.nav ul li:hover > a {
     color: rgb(0, 79, 230);
     font-weight: bold;
 }
@@ -236,7 +243,6 @@ footer {
     overflow: hidden;
 }
 
-.pic img{
+.pic img {
     width: 250px;
-    /*height: 380px;*/
- }
+}
