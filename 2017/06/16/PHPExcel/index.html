@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <title>PHPExcel下载乱码</title>
+    <link rel="stylesheet" href="../../../../css/myself.css">
+</head>
+<body>
+<div class="cover">
+    <div class="ll"></div>
+    <div class="title"><img src="http://or2fnb3it.bkt.clouddn.com/element.ico" alt="" id="title_img"> Lady Chen's Home
+        Page
+    </div>
+    <div class="line_1"></div>
+    <div class="line_2"></div>
+    <div class="line_3"></div>
+    <nav class="nav">
+        <ul>
+            <li><a href='../../../../index.html'>Home</a></li>
+            <li><a href='../../../../work'>Work</a></li>
+            <li><a href='../../../../enjoy'>Enjoy</a></li>
+            <li><a href='../../../../contact'>About</a></li>
+        </ul>
+    </nav>
+    <div class="page_border">
+        <div class="page_title">
+            PHPExcel下载乱码
+        </div>
+        <div class="page_content">
+            <p>&ensp;&ensp;&ensp;&ensp;今天在调试PHPExcel的时候，前端下载表格，后端代码并没有问题，并且在本地测试都能够正常运行，但是在前端请求后response里面却是一堆乱码，而且能够看出这堆乱码是execl的内容。上网查询有人说是因为编码问题，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">'Content-Type: application/vnd.ms-excel;charset=utf-8'</span>);</div></pre></td></tr></table></figure>
+<p>要加上这个请求头的话中文不会乱码，可是我的问题是文件不生成，直接在response里面显示一堆乱码的问题，那继续排查问题，为什么本地运行好使，线上环境就不好使。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ob_end_clean();</div></pre></td></tr></table></figure>
+<p>&ensp;&ensp;&ensp;&ensp;还有人说要加上这句话，清除缓冲区, 这样就不会乱码了。但是我理解这句话更多能解决的是下载后打开文件失败和文件错误的问题。还有的人说是因为在配置文件里出现了BOM头，会导致下载失败或乱码等，但我的配置文件没有问题，那到底是什么问题出现了错误。</p>
+<p>&ensp;&ensp;&ensp;&ensp;最后，这个问题居然是因为请求方式的问题导致下载失败。</p>
+<p>&ensp;&ensp;&ensp;&ensp;我在本地测试的时候是localhot的url访问，也就是get请求的表格，在测试服务器上前端的参数传递是通过post方式传递的，所以我的表格信息就是在response里显示出来并不是下载的，前端的同事改完get方式依旧不行，为什么，原因我们已经找到了呀？哦，是要url式的get请求，用ajax写的get请求不行 =. =。</p>
+
+        </div>
+    </div>
+    <footer>
+        <p>Don't be too quick to judge</p>
+        <p>email:657466063@qq.com ; weibo:<span>勇敢无敌</span>Dangerous</p>
+    </footer>
+</div>
+
+<script src="../../../../js/jquery.min.js"></script>
+<script src="../../../../js/myself.js"></script>
+</body>
