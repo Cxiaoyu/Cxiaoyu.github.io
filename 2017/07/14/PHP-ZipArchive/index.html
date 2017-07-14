@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+    <title>PHP ZipArchive</title>
+    <link rel="stylesheet" href="../../../../css/myself.css">
+</head>
+<body>
+<div class="cover">
+    <div class="ll"></div>
+    <div class="title"><img src="http://or2fnb3it.bkt.clouddn.com/element.ico" alt="" id="title_img"> Lady Chen's Home
+        Page
+    </div>
+    <div class="line_1"></div>
+    <div class="line_2"></div>
+    <div class="line_3"></div>
+    <nav class="nav">
+        <ul>
+            <li><a href='../../../../index.html'>Home</a></li>
+            <li><a href='../../../../work'>Work</a></li>
+            <li><a href='../../../../enjoy'>Enjoy</a></li>
+            <li><a href='../../../../contact'>About</a></li>
+        </ul>
+    </nav>
+    <div class="page_border">
+        <div class="page_title">
+            PHP ZipArchive
+        </div>
+        <div class="page_content">
+            <h1 id="PHP-ZipArchive-小记"><a href="#PHP-ZipArchive-小记" class="headerlink" title="PHP ZipArchive 小记"></a>PHP ZipArchive 小记</h1><p>&ensp;&ensp;&ensp;&ensp;今天因为需求问题做了一个zip压缩包，用的是PHP的ZipArchive，在网上看了一下教程，乍一看很简单，并没有什么困难的地方，但是我生成的压缩包无论添加多少个文件都是固定大小，并且是损坏文件。为了避免歧义错误代码就不贴了。<br>&ensp;&ensp;&ensp;&ensp;那么这个过程中都有哪些问题：<br>&ensp;&ensp;&ensp;&ensp;1.首先，压缩包无论添加多少文件都是固定大小，那么说明并没有文件添加成功<br>&ensp;&ensp;&ensp;&ensp;2.其次，为什么压缩包都是损坏文件。<br>&ensp;&ensp;&ensp;&ensp;3.在生成压缩包的路径并没有看到新生成的.zip文件，是为什么？<br>&ensp;&ensp;&ensp;&ensp;解决过程就不再赘述，无非就是百度找各种资料。直接上解决方法。<br>&ensp;&ensp;&ensp;&ensp;1.对于文件没有添加成功问题：<br>&ensp;&ensp;&ensp;&ensp;添加成功文件代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$zip</span>-&gt;addFile(APPPATH . <span class="string">'cache/test.jpg'</span>, basename(APPPATH . <span class="string">'cache/test.jpg'</span>));</div></pre></td></tr></table></figure></p>
+<p>&ensp;&ensp;&ensp;&ensp;简单说明：addFile($filename, $localname)的两个参数，文件备注是这样的</p>
+<ul>
+<li>@param string $filename <p></p></li>
+<li>The path to the file to add.</li>
+<li>@param string $localname [optional] <p></p></li>
+<li>If supplied, this is the local name inside the ZIP archive that will override the <i>filename</i>.<br>&ensp;&ensp;&ensp;&ensp;就是因为没有理解清楚第一个参数的意思造成了添加失败，第一个参数指的是你往压缩包中添加的文件的路径，第二个参数是这个文件的名字。<br>&ensp;&ensp;&ensp;&ensp;为了在测试过程中看到到底有没有文件添加成功，可以使用来查看压缩包的具体数据。<pre><code class="bash">var_dump(<span class="variable">$zip</span>);
+</code></pre>
+&ensp;&ensp;&ensp;&ensp;可以看到参数：<br>object(ZipArchive)[32]<br>public ‘status’ =&gt; int 0<br>public ‘statusSys’ =&gt; int 0<br>public ‘numFiles’ =&gt; int 0<br>public ‘filename’ =&gt; string ‘D:\wamp64\www\wb\application\cache\20170714133526.zip’ (length=53)<br>public ‘comment’ =&gt; string ‘’ (length=0)</li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;numFiles 数量指的就是压缩包内文件数量，此时为0，如成功添加文件则为文件数量。</p>
+<p>&ensp;&ensp;&ensp;&ensp;对于问题2、3的解决，当问题1解决的时候这两个问题自然没有了，因为最开始是压缩包并没有真正创建成功，所以下载下来的压缩包只是一个空壳，固定大小、损坏文件。真正生成了压缩包之后也看到了相应路径里的压缩包。<br>&ensp;&ensp;&ensp;&ensp;（友情提示：对于在项目中的实际应用大概都是这是临时生成的压缩包，记得下载过后删除压缩包文件，避免垃圾文件）</p>
+<p>&ensp;&ensp;&ensp;&ensp;最后附上.zip文件的下载方式：</p>
+<pre><code class="bash">header(<span class="string">"Cache-Control: max-age=0"</span>);
+header(<span class="string">"Content-Description: File Transfer"</span>);
+header(<span class="string">'Content-disposition: attachment; filename='</span> . basename(<span class="variable">$zipName</span>)); // 文件名
+header(<span class="string">"Content-Type: application/zip"</span>); // zip格式的
+header(<span class="string">"Content-Transfer-Encoding: binary"</span>); // 告诉浏览器，这是二进制文件
+header(<span class="string">'Content-Length: '</span> . filesize(<span class="variable">$zipName</span>)); // 告诉浏览器，文件大小
+@readfile(<span class="variable">$zipName</span>);//输出文件;
+</code></pre>
+
+        </div>
+    </div>
+    <footer>
+        <p>Don't be too quick to judge</p>
+        <p>email:657466063@qq.com ; weibo:<span>勇敢无敌</span>Dangerous</p>
+    </footer>
+</div>
+
+<script src="../../../../js/jquery.min.js"></script>
+<script src="../../../../js/myself.js"></script>
+</body>
