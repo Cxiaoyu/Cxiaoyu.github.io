@@ -1,0 +1,51 @@
+<head>
+    <meta charset="UTF-8">
+    <title>微信支付各种坑</title>
+    <link rel="stylesheet" href="../../../../css/myself.css">
+    <link rel="shortcut icon" type="image/x-icon" href="element.ico" />
+</head>
+<body>
+<div class="cover">
+    <div class="ll"></div>
+    <div class="title"><img src="http://or2fnb3it.bkt.clouddn.com/element.ico" alt="" id="title_img"> Lady Chen's Home
+        Page
+    </div>
+    <div class="line_1"></div>
+    <div class="line_2"></div>
+    <div class="line_3"></div>
+    <nav class="nav">
+        <ul>
+            <li><a href='../../../../index.html'>Home</a></li>
+            <li><a href='../../../../work'>Work</a></li>
+            <li><a href='../../../../enjoy'>Enjoy</a></li>
+            <li><a href='../../../../contact'>About</a></li>
+        </ul>
+    </nav>
+    <div class="page_border">
+        <div class="page_title">
+            微信支付各种坑
+        </div>
+        <div class="page_content">
+            <p>这两天调试微信支付调的我各种心累，官方文档说的不清不楚，各种自相矛盾，累。</p>
+<h2 id="一、微信内H5支付："><a href="#一、微信内H5支付：" class="headerlink" title="一、微信内H5支付："></a>一、微信内H5支付：</h2><p>统一下单时”trade_type”=”JSAPI”,需要传openid<br>统一下单成功后jssdk传递参数问题：</p>
+<ul>
+<li>1：appId：I大写，前后端加密都为大写</li>
+<li>2：nonceStr：用统一下单的随机字符串</li>
+<li>3：package：prepay_id=’ . $response[‘prepay_id’]</li>
+<li>4：paySign：32位MD5加密，文档写的string(64)不对</li>
+<li>5：timeStamp：参数类型需要变成字符串，不然ios会提示缺少timeStamp参数</li>
+</ul>
+<p>关于提示url各种错误的问题都需要到公众平台上去设置了。</p>
+<h2 id="二、微信外浏览器H5支付："><a href="#二、微信外浏览器H5支付：" class="headerlink" title="二、微信外浏览器H5支付："></a>二、微信外浏览器H5支付：</h2><p>统一下单”trade_type”=”MWEB”<br>统一下单成功后url跳转问题：<br>mweb_url不能由后端直接跳转，微信会报错说没有refere</p>
+
+        </div>
+    </div>
+    <footer>
+        <p>Don't be too quick to judge</p>
+        <p>email:657466063@qq.com ; weibo:<span>勇敢无敌</span>Dangerous</p>
+    </footer>
+</div>
+
+<script src="../../../../js/jquery.min.js"></script>
+<script src="../../../../js/myself.js"></script>
+</body>
