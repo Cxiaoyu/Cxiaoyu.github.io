@@ -7,7 +7,7 @@
 <body>
 <div class="cover">
     <div class="ll"></div>
-    <div class="title"><img src="http://cxiaoyu.oss-cn-shanghai.aliyuncs.com/element.ico?Expires=1503030739&OSSAccessKeyId=TMP.AQFHkqvSODQHfdXMvBLieMOBxleMtSudMYIWjb92lvWoIR6e1UAoiHxQbs7HADAtAhUAj-As93lEV2L1zY376LPHqC8ZA8cCFBOWeeZL3BbCvVOUKe-BJ91ilS92&Signature=bPU2yTQkFlZhfnUntBwvqZjxSdg%3D" alt="" id="title_img"> Lady Chen's Home
+    <div class="title"><img src="http://cxiaoyu.oss-cn-shanghai.aliyuncs.com/element.ico" alt="" id="title_img"> Lady Chen's Home
         Page
     </div>
     <div class="line_1"></div>
@@ -35,9 +35,9 @@
 <li>4：paySign：32位MD5加密，文档写的string(64)不对</li>
 <li>5：timeStamp：参数类型需要变成字符串，不然ios会提示缺少timeStamp参数</li>
 </ul>
-<p>关于提示url各种错误的问题都需要到公众平台上去设置了。</p>
-<h2 id="二、微信外浏览器H5支付："><a href="#二、微信外浏览器H5支付：" class="headerlink" title="二、微信外浏览器H5支付："></a>二、微信外浏览器H5支付：</h2><p>统一下单”trade_type”=”MWEB”<br>统一下单成功后url跳转问题：<br>mweb_url不能由后端直接跳转，微信会报错说没有refere</p>
-
+<p>关于提示url各种错误的问题都需要到公众平台上去设置了。<br>prepay_id有效期5分钟，不能重复同一订单号下单。</p>
+<h2 id="二、微信外浏览器H5支付："><a href="#二、微信外浏览器H5支付：" class="headerlink" title="二、微信外浏览器H5支付："></a>二、微信外浏览器H5支付：</h2><p>统一下单”trade_type”=”MWEB”<br>统一下单成功后url跳转问题：<br>mweb_url不能由后端直接跳转，微信会报错说没有refere<br>mweb_url有效期限5分钟，五分钟内重新拿同一订单号统一下单会报错</p>
+<h4 id="补充：H5微信内和微信外支付都是需要统一下单，统一下单的商户订单号想通"><a href="#补充：H5微信内和微信外支付都是需要统一下单，统一下单的商户订单号想通" class="headerlink" title="补充：H5微信内和微信外支付都是需要统一下单，统一下单的商户订单号想通"></a>补充：H5微信内和微信外支付都是需要统一下单，统一下单的商户订单号想通</h4>
         </div>
     </div>
     <footer>
